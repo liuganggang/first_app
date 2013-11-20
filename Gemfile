@@ -7,6 +7,11 @@ gem 'rails', '4.0.0'
 group :development, :test do
   gem 'mysql2'
   gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec', '2.5.0'
+  # use spork
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.9'
 end
 
 group :test do
