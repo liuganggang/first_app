@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120044245) do
+ActiveRecord::Schema.define(version: 20131121061221) do
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20131120044245) do
     t.string   "emall"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
+
+  add_index "users", ["emall"], name: "index_users_on_emall", unique: true, using: :btree
 
 end
