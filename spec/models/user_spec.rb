@@ -79,4 +79,13 @@ describe User do
       specify { expect(user_for_invalid_password).to be_false }
     end
   end
+
+  describe "emall downcase" do
+    let(:downcase_emall) { 'LiuGang@qq.coM' }
+    it "should be downcase emall" do
+      @user.emall = downcase_emall
+      @user.save
+      expect(@user.reload.emall).to eq downcase_emall.downcase
+    end
+  end
 end
