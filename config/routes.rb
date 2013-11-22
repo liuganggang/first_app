@@ -6,9 +6,13 @@ FirstApp::Application.routes.draw do
   get "/contact" => "static_pages#contact"
   get "/sign_up" => "users#new"
 
+  get "/sign_in" => "sessions#new"
+  delete "/sign_out" => "sessions#destroy"
+
   resources :microposts
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
